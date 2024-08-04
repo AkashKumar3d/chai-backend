@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema({
 
 // code for incrypt the password before save the password and  update the password
 userSchema.pre("save", async function (next){
-    if(this.modified("password")){
+    if(!this.modified("password")){
          return next()
     }
     this.password = await bcrypt.hash(this.password, 8 )
@@ -58,6 +58,7 @@ userSchema.pre("save", async function (next){
 userSchema.method.isPasswordCorrect= async function(password){
     return  await bcrypt.compare(password, this.password)
 }
+
 
 // generate the AccessToken
 userSchema.method.genarateAccessToken = function () {

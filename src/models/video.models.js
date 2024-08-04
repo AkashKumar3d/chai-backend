@@ -38,6 +38,6 @@ const videoSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-videoSchema.plugin(mongooseAggregatePaginate)// initgrate for next level query  writen 
+videoSchema.plugin(mongooseAggregatePaginate)// initgrate for next level query  writen  in mongodb 
 
 export const Video = mongoose.model('Video', videoSchema)
