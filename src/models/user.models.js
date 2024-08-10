@@ -1,4 +1,4 @@
-import { jwt } from "jsonwebtoken";
+import  jwt  from "jsonwebtoken";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -89,4 +89,4 @@ userSchema.method.genarateRefreshToken = function () {
     )
 }
 
-export const User = mongoose.model('User', userSchema)
+export  const User = mongoose.model('User', userSchema)
